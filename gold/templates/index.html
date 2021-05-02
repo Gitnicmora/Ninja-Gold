@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninja Money</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <div id="header">
+        <div class="name">
+            <h1>NINJA GOLD</h1>
+        </div>
+        <div class="gameSession">
+            <p>Gold:{{request.session.gold}}</p>
+            <a href="reset"><input type="submit" value="New Game"></a>
+        </div>
+    </div>
+    <div id="container">
+        <div class="formContent">
+            <form action="process_money" method="POST" class="">
+                {% csrf_token %}
+                <h3>Farm</h3>
+                <p>(earn 10-20 golds)</p>
+                <input type="hidden" name="location" value="farm">
+                <input type="submit" value="Find Gold!">
+            </form>
+            <form action="process_money" method="POST" class="">
+                {% csrf_token %}
+                <h3>Cave</h3>
+                <p>(earn 5-10 golds)</p>
+                <input type="hidden" name="location" value="cave">
+                <input type="submit" value="Find Gold!">
+            </form>
+            <form action="process_money" method="POST" class="">
+                {% csrf_token %}
+                <h3>House</h3>
+                <p>(earn 2-5 golds)</p>
+                <input type="hidden" name="location" value="house">
+                <input type="submit" value="Find Gold!">
+            </form>
+            <form action="process_money" method="POST" class="">
+                {% csrf_token %}
+                <h3>Casino</h3>
+                <p>(earn/lose 0-50 golds)</p>
+                <input type="hidden" name="location" value="casino">
+                <input type="submit" value="Find Gold!">
+            </form>
+        </div>
+        <p>Activity:</p>
+        <div class="activity">
+            {% for activity in activities %}
+            <p>{{activity}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

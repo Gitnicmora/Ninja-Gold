@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+#container{
+    margin: 0 auto;
+    width: 970px;
+}
+#container p{
+    margin-top: 5px;
+}
+
+body{
+    margin: 0 auto;
+    background-color: #f8d659;
+}
+form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border: 3px black solid;
+    height: 150px;
+    width: 150px;
+}
+.activity{
+    border: 3px black solid;
+    height: auto;
+    padding: 5px;
+}
+
+#header{
+    display: flex;
+    justify-content: space-around;
+    background-color: #231f20;
+    margin-bottom: 10px;
+}
+
+input{
+    color: #f8d659;
+    background-color: #231f20;
+    padding: 5px;
+    border-radius: 4px;
+}
+
+h1{
+    color: #f8d659;
+}
+
+#header p{
+    color: #f8d659;
+}
+
+.formContent{
+    display: flex;
+    justify-content: space-between;
+}
+
+.k{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
